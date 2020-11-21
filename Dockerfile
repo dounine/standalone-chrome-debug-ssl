@@ -6,3 +6,5 @@ RUN sudo update-ca-certificates
 RUN mkdir -p $HOME/.pki/nssdb
 RUN certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n GoAgent -i '/usr/local/share/ca-certificates/ca-certificate-rsa.crt'
 RUN sudo apt-get clean && sudo apt-get autoclean
+EXPOSE 4444
+EXPOSE 5900
